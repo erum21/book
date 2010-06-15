@@ -31,6 +31,20 @@ BEGIN {
     } ## end for my $level ( 1 .. 5 )
 } ## end BEGIN
 
+    # Overloaded to add single quote processing, to avoid having LaTeX
+    # use "smart" curly quotes. For this to work, we also need to have
+    # this:
+    # \def\quote{{\fontencoding{TS1}\selectfont\char39}}
+sub encode_verbatim_text {
+    my ($self, $text) = @_;
+
+    $text =~ s/([{}])/\\$1/g;
+    $text =~ s/\\(?![{}])/\\textbackslash{}/g;
+    $text =~ s/'/{\\quote}/g;
+
+    return $text;
+}
+
 # Overload because of custom formatting for programlisting sections
 sub start_Verbatim {
     my $self  = shift;

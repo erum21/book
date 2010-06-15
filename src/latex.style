@@ -72,6 +72,7 @@
 \renewcommand*{\chaptermarkformat}{}
 \renewcommand*{\sectionmarkformat}{}
 
+\def\quote{{\fontencoding{TS1}\selectfont\char39}}
 
 \usepackage[headsepline,nouppercase,automark]{scrpage2}
 \clearscrheadfoot% das beinhaltet auch \clearscrplain

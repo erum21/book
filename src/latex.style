@@ -42,11 +42,6 @@
   pagebackref,
 }
 
-%% \textheight 571pt
-%% \topmargin 18pt
-%% \oddsidemargin 49pt
-%% \marginparwidth 53pt
-
 \DeclareUrlCommand\email{\urlstyle{rm}\urlstyle{bf}}
 
 \MakeOuterQuote{"}
@@ -100,6 +95,8 @@ Patrick R. Michaud\\
 Jonathan Worthington}
 
 \date{}
+
+[% page_dim %]
 
 \begin{document}
 
